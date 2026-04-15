@@ -8,7 +8,10 @@ A minimal FastAPI-based Python web project starter.
 .
 |-- app/
 |   |-- __init__.py
+|   |-- config.py
+|   |-- logging_config.py
 |   |-- main.py
+|   |-- middleware.py
 |   `-- routes.py
 |-- .github/
 |   `-- workflows/
@@ -67,6 +70,16 @@ uvicorn app.main:app --reload
 ```bash
 pytest
 ```
+
+## Environment Variables
+
+You can copy `.env.example` to `.env` and adjust values as needed.
+
+- `APP_NAME`: FastAPI app title
+- `APP_ENV`: runtime environment such as `development` or `production`
+- `APP_HOST`: host for local runs
+- `APP_PORT`: port for local runs
+- `LOG_LEVEL`: Python log level such as `INFO` or `DEBUG`
 
 If you want to install the app as a local package for development:
 
