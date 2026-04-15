@@ -10,11 +10,18 @@ A minimal FastAPI-based Python web project starter.
 |   |-- __init__.py
 |   |-- main.py
 |   `-- routes.py
+|-- .github/
+|   `-- workflows/
+|       `-- ci.yml
 |-- tests/
 |   |-- __init__.py
 |   `-- test_main.py
+|-- .dockerignore
 |-- .env.example
 |-- .gitignore
+|-- docker-compose.yml
+|-- Dockerfile
+|-- pyproject.toml
 `-- requirements.txt
 ```
 
@@ -60,6 +67,24 @@ uvicorn app.main:app --reload
 ```bash
 pytest
 ```
+
+If you want to install the app as a local package for development:
+
+```bash
+pip install -e .[dev]
+```
+
+## Run With Docker
+
+```bash
+docker compose up --build
+```
+
+The app will be available at <http://127.0.0.1:8000>.
+
+## CI
+
+This project includes a GitHub Actions workflow that runs tests on pushes and pull requests.
 
 ## Next Steps
 
